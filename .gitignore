@@ -3,3 +3,4 @@
 .vscode/
 .idea/
 ./prometheus/prometheus.yml
+./grafana/config/grafana.ini
