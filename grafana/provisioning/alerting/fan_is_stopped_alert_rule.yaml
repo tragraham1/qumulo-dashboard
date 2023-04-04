@@ -67,5 +67,6 @@ groups:
           description: >- 
             Fan {{ $labels.fan }} on node {{ $labels.node_id }} isn't running. Replace
             this fan as soon as possible.
+            24x7 - Log a moderate incident and assign to the Hosting Delivery team.
         labels:
           severity: critical
