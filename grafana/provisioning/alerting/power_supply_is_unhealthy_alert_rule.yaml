@@ -51,5 +51,6 @@ groups:
             PSU {{ $labels.location }} in node {{ $labels.node_id }} is disconnected, has
             been removed from the node, is malfunctioning, or is unhealthy. Connect the PSU
             correctly or replace it as soon as possible.
+            24x7 - Log a moderate incident and assign to the Hosting Delivery team.
         labels:
           severity: critical
