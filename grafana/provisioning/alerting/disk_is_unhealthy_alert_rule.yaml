@@ -53,6 +53,5 @@ groups:
             Disk {{ $labels.disk_type }} in drive bay {{ $labels.drive_bay }} on node
             {{ $labels.node_id }} has errors, has been removed from the node, or is
             unusable. Replace this disk as soon as possible.
-            24x7 - Log a moderate incident and assign to the Hosting Delivery team.
         labels:
           severity: critical
