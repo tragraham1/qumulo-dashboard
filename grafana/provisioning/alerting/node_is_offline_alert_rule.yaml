@@ -51,6 +51,5 @@ groups:
           description: >-
             Node {{ $labels.node_id }} is offline. Verify that power is connected to the
             node, that the node is powered on, and that its NICs are connected correctly.
-            24x7 - Log a moderate incident and assign to the Hosting Delivery team.
         labels:
           severity: critical
