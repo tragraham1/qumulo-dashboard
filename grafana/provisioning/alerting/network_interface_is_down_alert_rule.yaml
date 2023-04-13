@@ -50,6 +50,5 @@ groups:
           description: >-
             NIC {{ $labels.interface }} on node {{ $labels.node_id }} is offline. Verify
             that the NIC is connected to your network correctly.
-            24x7 - Log a moderate incident and assign to the Hosting Delivery team.
         labels:
           severity: critical
