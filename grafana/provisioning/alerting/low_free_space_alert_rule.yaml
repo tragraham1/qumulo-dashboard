@@ -114,9 +114,9 @@ groups:
                 uid: PBFA97CFB590B2093
               editorMode: builder
               exemplar: false
-              expr: qumulo_info
+              expr: last_over_time(qumulo_node_info[24h])
               hide: false
-              instant: true
+              instant: false
               intervalMs: 1000
               legendFormat: __auto
               maxDataPoints: 43200
