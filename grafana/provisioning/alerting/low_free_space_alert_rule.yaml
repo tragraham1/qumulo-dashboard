@@ -116,7 +116,7 @@ groups:
               exemplar: false
               expr: last_over_time(qumulo_node_info[24h])
               hide: false
-              instant: true
+              instant: false
               intervalMs: 1000
               legendFormat: __auto
               maxDataPoints: 43200
