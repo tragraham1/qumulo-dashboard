@@ -9,7 +9,7 @@ groups:
     rules:
       - uid: mSqpGgDVz
         ruleGroup: hardware
-        title: Disk is unhealthy
+        title: Disk is unhealthy2
         condition: disk_was_unhealthy
         data:
           - refId: disk_is_unhealthy
