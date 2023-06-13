@@ -9,10 +9,10 @@ groups:
     rules:
       - uid: mSqpGgDVz
         ruleGroup: hardware
-        title: Disk endurance low
-        condition: low_disk_endurance
+        title: Disk is unhealthy2
+        condition: disk_was_unhealthy
         data:
-          - refId: disk_endurance
+          - refId: disk_is_unhealthy
             queryType: ''
             relativeTimeRange:
               from: 60
@@ -20,19 +20,17 @@ groups:
             datasourceUid: PBFA97CFB590B2093
             model:
               editorMode: builder
-              exemplar: false
-              expr: qumulo_disk_endurance_percent
+              expr: qumulo_disk_is_unhealthy
               hide: false
-              instant: true
               intervalMs: 1000
               legendFormat: __auto
               maxDataPoints: 43200
-              range: false
-              refId: disk_endurance
-          - refId: low_disk_endurance
+              range: true
+              refId: disk is unhealthy
+          - refId: disk_was_unhealthy
             queryType: ''
             relativeTimeRange:
-              from: 600
+              from: 0
               to: 0
             datasourceUid: '-100'
             model:
@@ -40,18 +38,20 @@ groups:
                 name: Expression
                 type: __expr__
                 uid: __expr__
-              expression: $disk_endurance < 20
+              expression: disk_is_unhealthy
               hide: false
               intervalMs: 1000
               maxDataPoints: 43200
-              refId: low_disk_endurance
-              type: math
+              reducer: max
+              refId: disk was unhealthy
+              type: reduce
+        noDataState: NoData
         execErrState: Error
         for: 5m
         annotations:
           description: >-    
             Disk {{ $labels.disk_type }} in drive bay {{ $labels.drive_bay }} on node
-            {{ $labels.node_id }} has less than 20% disk endurance remaining.
-            Consider replacing this disk.
+            {{ $labels.node_id }} has errors, has been removed from the node, or is
+            unusable. Replace this disk as soon as possible.
         labels:
-          severity: warning
+          severity: critical
