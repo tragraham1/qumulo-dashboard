@@ -46,7 +46,6 @@ groups:
               maxDataPoints: 43200
               refId: low_disk_endurance
               type: math
-        noDataState: NoData
         execErrState: Error
         for: 5m
         annotations:
